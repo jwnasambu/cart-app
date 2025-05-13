@@ -23,7 +23,8 @@ const cartSlice = createSlice({
             if (quantity > 0) {
                 state.items[indexProductId].quantity = quantity;
             } else {
-                delete state.items[indexProducts];
+                // delete state.items[indexProducts];
+                state.items = { state, items }.filter(item => item.productId !== productId);
             }
         }
     }
